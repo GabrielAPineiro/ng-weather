@@ -1,0 +1,16 @@
+<div>
+	<div class="tab-group">
+		<div class="tab" [ngClass]="{ active: tab == activeComponent }" *ngFor="let tab of tabs">
+			<span (click)="activateTab(tab)">{{ tab.tabName }}</span>
+			<span class="ml-1 close" (click)="removeTab(tab)">X</span>
+		</div>
+	</div>
+
+	<div class="well flex">
+		<ng-template
+			*ngIf="activeComponent"
+			[ngTemplateOutlet]="activeComponent.templateRef"
+			[ngTemplateOutletContext]="{ item: activeComponent.item }"
+		></ng-template>
+	</div>
+</div>

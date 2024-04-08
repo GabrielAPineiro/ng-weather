@@ -1,0 +1,6 @@
+<div class="well">
+	<h2>Please specify the cache duration (in seconds):</h2>
+	<input type="number" [value]="inputValue" [min]="0" #cacheDuration placeholder="Duration" class="form-control" />
+	<br />
+	<button class="btn btn-primary" (click)="cacheService.updateCacheDuration(cacheDuration.value)">Update duration</button>
+</div>
