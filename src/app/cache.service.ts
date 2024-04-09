@@ -33,6 +33,7 @@ export class CacheService {
 				const cachedTime = new Date(cachedItem[key].expiryDateAndTime);
 				const now = new Date();
 
+				// Checking if cached time is bigger than now to return cached item
 				if (cachedTime > now) {
 					return cachedItem[key].data;
 				}
